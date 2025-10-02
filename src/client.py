@@ -4,6 +4,9 @@ import socket
 import threading
 
 class ClientGUI:
+
+    commands = [("HELLO", "blue"), ("TIME", "purple"), ("STATUS", "green")]
+
     def __init__(self, root):
         self.root = root
         self.root.title("TCP Client - Command Sender")
@@ -40,15 +43,7 @@ class ClientGUI:
         cmd_frame = tk.Frame(root)
         cmd_frame.pack(pady=5)
         
-        commands = [
-            ("HELLO", "blue"),
-            ("TIME", "purple"),
-            ("STATUS", "green"),
-            ("DATA", "orange"),
-            ("SHUTDOWN", "red")
-        ]
-        
-        for i, (cmd, color) in enumerate(commands):
+        for i, (cmd, color) in enumerate(self.commands):
             btn = tk.Button(cmd_frame, text=cmd, width=12, height=2, command=lambda c=cmd: self.send_command(c), bg=color, fg="black", font=standard_font, state=tk.DISABLED)
             btn.grid(row=i//3, column=i%3, padx=5, pady=5)
             setattr(self, f"cmd_btn_{i}", btn)
@@ -80,7 +75,7 @@ class ClientGUI:
             self.port_entry.config(state=tk.DISABLED)
             
             # Enable command buttons
-            for i in range(5):
+            for i in range(len(self.commands)):
                 getattr(self, f"cmd_btn_{i}").config(state=tk.NORMAL)
             
             self.display_response(f"Connected to server at {host}:{port}\n\n")
@@ -101,7 +96,7 @@ class ClientGUI:
         self.port_entry.config(state=tk.NORMAL)
         
         # Disable command buttons
-        for i in range(5):
+        for i in range(len(self.commands)):
             getattr(self, f"cmd_btn_{i}").config(state=tk.DISABLED)
         
         self.display_response("Disconnected from server\n\n")
