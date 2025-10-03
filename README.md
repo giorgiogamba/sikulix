@@ -7,10 +7,14 @@ They will contain buttons and textboxes that will be updated through the actions
 ## How to run
 
 ### Server
-Run the server application using python. Once started the app, start the server by clicking "Start Server"
+From the root folder, run the server application using `python3 src/server.py`. Once started the app, start the server by clicking "Start Server"
 
 ### Client
-Run the client application using python. Once started the app, connect to the server by clicking "Connect"
+From the root folder, run the client application using `python3 src/client.py`. Once started the app, connect to the server by clicking "Connect"
 
 You should see both the applications displaying green messages telling "connection accepted"
 
+### Sikulix
+The sikulix IDE can be started by typing `java -jar sx.jar`
+
+Then, you have to load the script `client_server_1` and start it using the IDE.
