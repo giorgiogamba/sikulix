@@ -45,22 +45,7 @@ client_screen.wait("1759398593383.png")
 # Command launch
 client_screen.click("1759400416557.png")
 server_screen.wait("1759400442376.png")
-
 client_screen.click("1759400536979.png")
 server_screen.wait("1759400582463.png")
 client_screen.click("1759400546909.png")
 server_screen.wait("1759400593095.png")
-client_screen.click("1759400556207.png")
-server_screen.wait("1759400604024.png")
-client_screen.click("1759400565977.png")
-server_screen.wait("1759400616376.png")
-
-quit()
-
-
-
-
-
-
-
-
