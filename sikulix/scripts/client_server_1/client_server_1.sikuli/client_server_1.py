@@ -93,7 +93,7 @@ except Exception as e:
 
 # Server start
 server_region.click("1759398479349.png")
-server_region.wait("1759398529789.png")
+server_region.wait("1760017642222.png")
 
 ## Client connection
 client_region.click("1759398719570.png")
